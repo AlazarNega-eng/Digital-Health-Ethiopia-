@@ -17,10 +17,25 @@ export async function POST(req: NextRequest) {
       },
     });
     return NextResponse.json(patient, { status: 201 });
-  } catch (error: any) {
-    if (error.code === "P2002") {
+  } catch (error: unknown) {
+    if (
+      error &&
+      typeof error === "object" &&
+      "code" in (error as Record<string, unknown>) &&
+      (error as Record<string, unknown>).code === "P2002"
+    ) {
       return NextResponse.json({ error: "Patient with this Fayda ID already exists" }, { status: 409 });
     }
-    return NextResponse.json({ error: error.message || "Internal server error" }, { status: 500 });
+    const message = error && typeof error === "object" && "message" in (error as Record<string, unknown>) && typeof (error as Record<string, unknown>).message === "string"
+      ? (error as Record<string, unknown>).message as string
+      : "Internal server error";
+    return NextResponse.json({ error: message }, { status: 500 });
   }
+}
+
+export async function GET() {
+  const patients = await prisma.patient.findMany({
+    orderBy: { createdAt: "desc" },
+  });
+  return NextResponse.json(patients);
 } 
