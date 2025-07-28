@@ -1,36 +1,49 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Project Title
+FaydaHealth
 
-## Getting Started
+# Contributors
+*   [Alazar Nega]
+*   [Brook Lemma]
+*   [Natanim H/meskel]
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+# Project Synopsis
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Problem Statement
+The current healthcare system in Ethiopia is largely dependent on a paper-based documentation process. When patients visit a hospital, their medical history is recorded on physical cards. This system presents several challenges:
+*   **Inefficiency:** Patient registration and record retrieval are slow and labor-intensive.
+*   **Risk of Data Loss:** Physical cards can be easily lost, damaged, or misplaced, leading to a complete loss of a patient's medical history.
+*   **Lack of Centralization:** Medical records are fragmented across different healthcare providers, making it impossible to get a holistic view of a patient's health.
+*   **Poor Patient Experience:** Patients are burdened with the responsibility of carrying their medical cards to every appointment.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Planned Solution
+FaydaHealth is a digital health platform designed to centralize and streamline patient health records using Ethiopia's national digital ID, Fayda. Our solution will replace the outdated paper-based system with a secure, unified digital platform. Key components include:
+*   **Backend:** A robust server to manage the database and business logic.
+*   **Database:** A secure and structured database to store patient information, medical history, and treatment plans.
+*   **Frontend:** An intuitive user interface (UI) for healthcare professionals to access and manage patient records efficiently.
+*   **Authentication:** Secure user authentication will be handled via the **VeriFayda OIDC** integration, using the Fayda ID as the single, reliable key to access a patient's record.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Expected Outcome
+By implementing FaydaHealth, we aim to achieve the following:
+*   **Improved Efficiency:** Drastically reduce patient wait times and administrative overhead.
+*   **Enhanced Patient Care:** Provide doctors with instant access to comprehensive and accurate patient history, leading to better-informed medical decisions and reduced errors.
+*   **Empowered Patients:** Allow citizens to have a unified health record accessible with their Fayda ID, eliminating the need for physical cards.
+*   **A Centralized Health Data System:** Create a foundational platform for a national electronic health record system, enabling better public health monitoring and policy-making.
 
-## Learn More
+## Fayda's Role
+The Fayda ID is the cornerstone of our project. It serves as the **single source of truth for patient identity**.
+*   **Unique Identifier:** Fayda provides a unique, secure, and verifiable digital identity for every citizen, eliminating duplicate records and identification errors.
+*   **Seamless Integration:** By using the **VeriFayda OIDC API**, we can ensure that only authorized healthcare personnel can access sensitive medical data, securely authenticating their sessions.
+*   **Foundation for Trust:** Leveraging the national ID infrastructure builds immediate trust and provides a scalable foundation to expand the system nationwide.
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# Tech Stack
+*   **Framework:** Next.js (with TypeScript)
+*   **Database:** PostgreSQL
+*   **ORM:** Prisma
+*   **style:** Tailwind CSS and Shadcn/UI
+*   **Authentication:** VeriFayda OIDC
+*   **UI/UX Design:** [Figma]
+*   **Deployment:** [Vercel, Docker]
