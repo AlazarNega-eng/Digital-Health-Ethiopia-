@@ -1,3 +1,61 @@
+
+---
+
+## Installation and Deployment
+
+You can run this project either locally for development or using Docker for a production-like setup.
+
+### Prerequisites
+
+*   Node.js (v18 or later)
+*   npm
+*   Docker and Docker Compose (for Docker deployment)
+
+### 1. Local Development Setup
+
+**Step 1: Clone the repository**
+```bash
+git clone https://github.com/your-username/fayda-health.git
+cd fayda-health
+```
+
+**Step 2: Install dependencies**
+```bash
+npm install
+```
+
+**Step 3: Set up environment variables**
+Edit the `.env` file with your database and authentication credentials.
+
+**Step 4: Run database migrations**
+```bash
+npx prisma migrate dev
+```
+
+**Step 5: Start the development server**
+```bash
+npm run dev
+```
+
+The app will be available at `http://localhost:3000`.
+
+### 2. Docker Deployment
+
+**Step 1: Build and start the containers**
+```bash
+docker-compose up --build
+```
+
+**Step 2: Apply Prisma migrations in the running container**
+```bash
+docker-compose exec app npx prisma migrate deploy
+```
+
+The app will be available at `http://localhost:3000` and PostgreSQL at `localhost:5432`.
+
+---
+
+
 # Project Title
 FaydaHealth
 
