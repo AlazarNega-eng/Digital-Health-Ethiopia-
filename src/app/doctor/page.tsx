@@ -2,6 +2,7 @@
 import { Card } from "../../components/ui/card";
 import { Button } from "../../components/ui/button";
 import { User, Stethoscope, Calendar, FileText, Bell } from "lucide-react";
+import Link from "next/link";
 
 export default function DoctorDashboard() {
   return (
@@ -35,7 +36,9 @@ export default function DoctorDashboard() {
                 <h3 className="text-lg sm:text-xl font-semibold">Patient Management</h3>
               </div>
               <p className="text-gray-600 mb-3 sm:mb-4 text-sm sm:text-base">View and manage patient records, medical history, and treatment plans.</p>
-              <Button className="w-full text-sm sm:text-base">View Patients</Button>
+              <Button asChild className="w-full text-sm sm:text-base">
+                <Link href="/doctor/patient">View Patients</Link>
+              </Button>
             </Card>
 
             {/* Appointments */}
@@ -45,7 +48,9 @@ export default function DoctorDashboard() {
                 <h3 className="text-lg sm:text-xl font-semibold">Appointments</h3>
               </div>
               <p className="text-gray-600 mb-3 sm:mb-4 text-sm sm:text-base">Schedule and manage patient appointments and consultations.</p>
-              <Button className="w-full text-sm sm:text-base">Manage Appointments</Button>
+              <Button asChild className="w-full text-sm sm:text-base">
+                <Link href="/doctor/appointment">Manage Appointments</Link>
+              </Button>
             </Card>
 
             {/* Medical Records */}
@@ -55,7 +60,9 @@ export default function DoctorDashboard() {
                 <h3 className="text-lg sm:text-xl font-semibold">Medical Records</h3>
               </div>
               <p className="text-gray-600 mb-3 sm:mb-4 text-sm sm:text-base">Access and update patient medical records and prescriptions.</p>
-              <Button className="w-full text-sm sm:text-base">View Records</Button>
+              <Button asChild className="w-full text-sm sm:text-base">
+                <Link href="/doctor/medical-record">View Records</Link>
+              </Button>
             </Card>
 
             {/* Treatment Plans */}
@@ -65,7 +72,9 @@ export default function DoctorDashboard() {
                 <h3 className="text-lg sm:text-xl font-semibold">Treatment Plans</h3>
               </div>
               <p className="text-gray-600 mb-3 sm:mb-4 text-sm sm:text-base">Create and manage patient treatment plans and follow-ups.</p>
-              <Button className="w-full text-sm sm:text-base">Create Plans</Button>
+              <Button asChild className="w-full text-sm sm:text-base">
+                <Link href="/doctor/treatment-plan">Create Plans</Link>
+              </Button>
             </Card>
 
             {/* Emergency Access */}
@@ -75,7 +84,9 @@ export default function DoctorDashboard() {
                 <h3 className="text-lg sm:text-xl font-semibold">Emergency Access</h3>
               </div>
               <p className="text-gray-600 mb-3 sm:mb-4 text-sm sm:text-base">Quick access to emergency patient information and protocols.</p>
-              <Button variant="destructive" className="w-full text-sm sm:text-base">Emergency Mode</Button>
+              <Button asChild variant="destructive" className="w-full text-sm sm:text-base">
+                <Link href="/doctor/emergency-access">Emergency Mode</Link>
+              </Button>
             </Card>
 
             {/* Settings */}

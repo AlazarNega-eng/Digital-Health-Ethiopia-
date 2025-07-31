@@ -23,6 +23,8 @@ model Patient {
   createdAt   DateTime        @default(now())
   updatedAt   DateTime        @updatedAt
   records     MedicalRecord[]
+  appointments Appointment[]
+  treatmentPlans TreatmentPlan[]
 }
 
 model MedicalRecord {
@@ -34,4 +36,21 @@ model MedicalRecord {
   treatment        String?  // Optional field
   notes            String?  // Optional field
   createdAt        DateTime @default(now())
+}
+
+model Appointment {
+  id        String   @id @default(cuid())
+  patient   Patient  @relation(fields: [patientId], references: [id])
+  patientId String
+  date      DateTime
+  time      String
+  createdAt DateTime @default(now())
+}
+
+model TreatmentPlan {
+  id        String   @id @default(cuid())
+  patient   Patient  @relation(fields: [patientId], references: [id])
+  patientId String
+  details   String
+  createdAt DateTime @default(now())
 }
